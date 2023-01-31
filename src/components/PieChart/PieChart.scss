@@ -1,0 +1,41 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+.pie-chart{
+    transform: scale(1.6);
+}
+
+.wrapper {
+    box-shadow: $base-box-shadow;
+    border-radius: 20px;
+    width: 90%;
+    background-color: #364153;
+    @include centerElement(column);
+}
+
+
+.description{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        p{
+            color: rgb(36, 36, 36);
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.box{
+    width: 15px;
+    height: 15px;
+    background-color: orange;
+    display: block;
+    border-radius: 4px;
+}
+
+.box-2{background-color: rgb(18, 181, 143)}
+.box-3{background-color: rgb(13, 101, 184)}

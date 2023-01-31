@@ -1,0 +1,30 @@
+.Sidebar {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .list-sidebar {
+        flex: 10;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li{
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            margin: 1rem 0;
+            cursor: pointer;
+            background-color: rgb(42, 42, 42);
+            color: whitesmoke;
+            span {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

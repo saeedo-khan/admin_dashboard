@@ -1,0 +1,48 @@
+@use "sass:math";
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.Box{
+    flex: 1;
+    box-shadow: $base-box-shadow;
+    padding: $base-padding;
+    margin: $base-margin;
+    border-radius: $base-border-radius;
+    background-color: #364153;
+    .container {
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.col-icon {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    span {
+        background-color: rgb(60, 20, 99);
+        color: rgb(124, 72, 176);
+        padding: 1rem;
+        border-radius: 70px;
+        @include centerElement();
+    }
+}
+
+.col-text{
+    flex: 3;
+    @include centerElement(column);
+    align-items: flex-start;
+    cursor: default;
+    .statsNum{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: rgb(200, 200, 200);
+    }
+    .title-box {
+        color: rgb(200, 200, 200);
+        text-transform: capitalize;
+        font-family: $base-font-family;
+        font-size: 1rem;
+    }
+}

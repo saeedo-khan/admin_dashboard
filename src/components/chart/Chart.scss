@@ -1,0 +1,8 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.Chart{
+    box-shadow: $base-box-shadow;
+    padding: 1.5rem;
+    border-radius: $base-border-radius;
+}

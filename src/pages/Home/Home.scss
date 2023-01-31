@@ -1,0 +1,37 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.Home {
+    display: flex;
+    gap: 2rem;
+    background-color: #1E2532;
+}
+
+.content {
+    flex: 8;
+    display: grid;
+    grid-template-columns: repeat(12/1fr);
+}
+
+.top {
+    grid-column: 2 / 12;
+    @include centerElement();
+    gap: 1rem;
+}
+
+.main-chart {
+    grid-column: 1/7;
+    box-shadow: $base-box-shadow;
+    border-radius: $base-border-radius;
+    @include centerElement()
+}
+.main-pie{
+    grid-column: 8/12;
+}
+
+.bottom {
+    width: 400px;
+    height: 200px;
+    background-color: lavenderblush;
+    grid-column: 1 /12;
+}

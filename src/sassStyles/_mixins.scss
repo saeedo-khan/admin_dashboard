@@ -1,0 +1,41 @@
+
+// breakpoints screen widths
+$large: 1200px;
+$medium: 760px;
+$small: 480px;
+
+
+@mixin bp-large {
+    @media (max-width: $large){
+        @content;
+    }
+}
+
+@mixin bp-medium {
+    @media (max-width: $medium){
+        @content;
+    }
+}
+
+@mixin bp-small {
+    @media (max-width: $small){
+        @content;
+    }
+}
+
+@mixin bp-custom($val){
+    @media (max-width: $val) {
+        @content;
+    }
+}
+
+
+
+// center element 
+
+@mixin centerElement($dir: row){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
