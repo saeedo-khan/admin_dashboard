@@ -29,9 +29,30 @@
     grid-column: 8/12;
 }
 
-.bottom {
-    width: 400px;
-    height: 200px;
-    background-color: lavenderblush;
-    grid-column: 1 /12;
+.bottom-order {
+    grid-column: 1 /6;
+}
+
+.bottom-product {
+    grid-column: 8/12;
+    margin-top: 0.5rem;
+    .procut-wrapper {
+        @include centerElement(column);
+        background-color: #364153;
+        border-radius: $base-border-radius;
+        width: 90%;
+        column-gap: 0.5rem;
+        padding: $base-padding;
+        p {
+            color: whitesmoke;
+            font-family: $base-font-family;
+        }
+    }
+}
+
+.line {
+    width: 60%;
+    background-color: rgba(255, 255, 0, 0.015);
+    border-radius: 80%;
+    margin-bottom: 1rem;
 }
