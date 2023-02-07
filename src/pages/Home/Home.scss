@@ -1,58 +1,113 @@
 @import "../../sassStyles/variables";
 @import "../../sassStyles/mixins";
 
-.Home {
+.home-content {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
-    gap: 2rem;
-    background-color: #1E2532;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+
+    @include bp-medium {
+        max-width: 500px;
+    }
+
+    @include bp-small {
+        max-width: 300px;
+    }
 }
 
-.content {
-    flex: 8;
-    display: grid;
-    grid-template-columns: repeat(12/1fr);
-}
+
 
 .top {
-    grid-column: 2 / 12;
-    @include centerElement();
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+}
+
+.wrapp-mid {
+    display: flex;
+    align-items: center;
     gap: 1rem;
-}
+    flex-flow: row wrap;
+    margin: 1rem 0;
 
-.main-chart {
-    grid-column: 1/7;
-    box-shadow: $base-box-shadow;
-    border-radius: $base-border-radius;
-    @include centerElement()
-}
-.main-pie{
-    grid-column: 8/12;
-}
-
-.bottom-order {
-    grid-column: 1 /6;
-}
-
-.bottom-product {
-    grid-column: 8/12;
-    margin-top: 0.5rem;
-    .procut-wrapper {
-        @include centerElement(column);
-        background-color: #364153;
+    .main-chart {
+        flex: 2;
         border-radius: $base-border-radius;
-        width: 90%;
-        column-gap: 0.5rem;
-        padding: $base-padding;
-        p {
-            color: whitesmoke;
-            font-family: $base-font-family;
+        border: 1px solid rgba(220, 220, 220, 0.603);
+        height: 400px;
+        @include centerElement();
+        @include bp-small{
+            width: 100%;
+        }
+    }
+
+    .main-pie {
+        flex: 1;
+        border-radius: $base-border-radius;
+        background-color: #364153;
+        height: 400px;
+        @include centerElement();
+        min-width: 300px;
+        @include bp-small{
+            width: 100%;
         }
     }
 }
 
+.wrap-bottom {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap-reverse;
+    margin-top: 0.5rem;
+
+    .bottom-order {
+        flex: 2;
+        height: 350px;
+        min-width: 400px;
+
+        @include bp-small{
+            min-width: auto;
+        }
+    }
+
+    .bottom-product {
+        flex: 1;
+        border-radius: $base-border-radius;
+        border: 1px solid rgba(220, 220, 220, 0.603);
+        height: 330px;
+        width: 300px;
+        @include centerElement();
+
+        @include bp-medium {
+            margin-top: 1rem;
+        }
+        
+
+        .procut-wrapper {
+            @include centerElement(column);
+            .title{
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+            @include bp-small{
+                width: 80%;
+            }
+        }
+    }
+}
+
+
 .line {
-    width: 60%;
+    width: 70%;
     background-color: rgba(255, 255, 0, 0.015);
-    border-radius: 80%;
+    border-radius: 90%;
     margin-bottom: 1rem;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Sidebar from "../../components/layout/Sidebar/Sidebar";
 import Chart from "../../components/chart/Chart";
 import "./Home.scss";
 import PieChart from "../../components/PieChart/PieChart";
@@ -7,34 +7,41 @@ import Box from "../../components/Box/Box";
 
 import MiniProduct from "../../components/MiniProduct/MiniProduct";
 import { boxesData, topProducts } from "../../utils/productsData";
+import MiniOrder from "../../components/MiniOrder/MiniOrder";
+import Datatable from "../../components/Datatable/Datatable";
+import LineBarArea from "../../components/LineBarArea/LineBarArea";
 
 const Home: React.FC = () => {
   return (
-    <div className="Home">
-      <Sidebar />
-      <div className="content">
-        <div className="top">
-          {boxesData.map((data) => (
-            <Box
-              stats={data.stats}
-              title={data.title}
-              Icon={data.boxIcon}
-              key={data.title}
-            />
-          ))}
-        </div>
+    <div className="home-content">
+      <div className="top">
+        {boxesData.map((data) => (
+          <Box
+            stats={data.stats}
+            title={data.title}
+            Icon={data.boxIcon}
+            key={data.title}
+          />
+        ))}
+      </div>
+      <div>
+        <h2 style={{ color: "#364153" }}>Dashboard</h2>
+      </div>
+      <div className="wrapp-mid">
         <div className="main-chart">
           <Chart />
         </div>
         <div className="main-pie">
-          <PieChart />
+          <LineBarArea />
         </div>
+      </div>
+      <div className="wrap-bottom">
         <div className="bottom-order">
-          <div>Orders</div>
+          <Datatable />
         </div>
         <div className="bottom-product">
           <div className="procut-wrapper">
-            <p>Top Product sellers</p>
+            <h3 className="title">Top Product sellers</h3>
             {topProducts.map((item, idx) => (
               <React.Fragment key={item.title}>
                 <MiniProduct

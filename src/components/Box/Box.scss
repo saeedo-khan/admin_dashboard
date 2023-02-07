@@ -4,11 +4,11 @@
 
 .Box{
     flex: 1;
-    box-shadow: $base-box-shadow;
     padding: $base-padding;
     margin: $base-margin;
     border-radius: $base-border-radius;
-    background-color: #364153;
+    background: rgba(55, 63, 68, 0.154);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.193) 0%, rgb(60, 60, 84)0%); 
     .container {
         height: 100px;
         display: flex;
@@ -26,6 +26,9 @@
         padding: 1rem;
         border-radius: 70px;
         @include centerElement();
+        @include bp-large{
+            padding: 0.5rem
+        }
     }
 }
 
@@ -34,10 +37,17 @@
     @include centerElement(column);
     align-items: flex-start;
     cursor: default;
+    @include bp-large{
+        flex: 2
+    }
+    
     .statsNum{
         font-size: 1.5rem;
         font-weight: bold;
         color: rgb(200, 200, 200);
+        @include bp-large{
+            font-size: 1rem;
+        }
     }
     .title-box {
         color: rgb(200, 200, 200);

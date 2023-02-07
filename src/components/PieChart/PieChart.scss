@@ -1,15 +1,17 @@
 @import "../../sassStyles/variables";
 @import "../../sassStyles/mixins";
-.pie-chart{
-    transform: scale(1.6);
-}
+
 
 .wrapper {
     box-shadow: $base-box-shadow;
     border-radius: 20px;
-    width: 90%;
-    background-color: #364153;
+    width: 80%;
+    height: 100%;
+    background: #364153;
     @include centerElement(column);
+    @include bp-large {
+        width: 95%;
+    }
 }
 
 
@@ -17,14 +19,22 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    @include bp-large{
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
     div{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
         p{
-            color: rgb(36, 36, 36);
-            font-size: 1.3rem;
+            font-size: 1rem;
+            font-family: $base-font-family;
+            color: whitesmoke;
+            @include bp-medium{
+                font-size: 0.7rem;
+            }
         }
     }
 }
@@ -35,6 +45,10 @@
     background-color: orange;
     display: block;
     border-radius: 4px;
+    @include bp-large{
+        width: 8px;
+        height: 8px;
+    }
 }
 
 .box-2{background-color: rgb(18, 181, 143)} 
