@@ -1,0 +1,22 @@
+@import '../../sassStyles/variables.scss';
+
+.Datatable{
+    height: 80%;
+    width: 100%;
+}
+
+.datagrid{
+    height: 500px;
+}
+
+.cellWithImg{
+    display: flex;
+    align-items: center;
+}
+
+.cellImg{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}

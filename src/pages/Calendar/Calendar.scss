@@ -1,0 +1,35 @@
+@import "../../sassStyles/mixins";
+.Calendar{
+    background-color: #364153;
+    height: 100%;
+}
+.wrapp-calendar{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.modal-add-event{
+    @include centerElement(column);
+}
+
+.add-event{
+    @include centerElement(column);
+    background-color: #2a2a2a;
+    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+
+    .title-event{
+        @include inputStyle();
+        width: 200px !important;
+        display: block;
+    }
+    input[type="text"]{
+        @extend .title-event;
+    }
+    .add-event-btn{
+        button {
+            @include btn()
+        }
+    }
+}

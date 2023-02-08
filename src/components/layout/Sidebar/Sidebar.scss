@@ -1,0 +1,76 @@
+@import "../../../sassStyles/variables";
+@import "../../../sassStyles/mixins";
+
+.Sidebar {
+    flex: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100%;
+    @include bp-small {
+        display: none;
+    }
+
+    .content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(34, 37, 52);
+        .logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .list-sidebar {
+            flex: 8;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+    
+            li {
+                display: flex;
+                align-items: space-around;
+                justify-content: space-around;
+                padding: 5px;
+                margin: 1rem 0;
+                cursor: pointer;
+                color: whitesmoke;
+    
+                .side-icon {
+                    color: rgb(125, 125, 125);
+    
+                    @include bp-medium {
+                        &:hover {
+                            color: whitesmoke;
+                            transition: 0.5s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    .footer-sidebar {
+        flex: 1;
+        @include centerElement();
+
+        span {
+            cursor: pointer;
+        }
+    }
+}
+
+.side-text {
+    @include bp-medium {
+        display: none;
+    }
+}
+
+.active {
+    color: whitesmoke !important;
+}
