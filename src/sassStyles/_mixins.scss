@@ -1,4 +1,4 @@
-
+@import "./variables";
 // breakpoints screen widths
 $large: 1200px;
 $medium: 768px;
@@ -38,4 +38,37 @@ $small: 480px;
     align-items: center;
     justify-content: center;
     flex-direction: $dir;
+}
+
+
+@mixin inputStyle($outColor: #5a86b5,$fSize: 14px){
+    padding: 10px;
+    margin: 0.5rem;
+    font-size: $fSize;
+    border: none;
+    border-radius: 10px;
+    outline-color: $outColor;
+}
+
+@mixin btn($bgColor: #0f4eb3, $txtColor: whiteSmoke){
+    padding: 6px 16px;
+    margin: 1rem 0.5rem;
+    border-radius: 6px;
+    background-color: $bgColor;
+    color: $txtColor;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: $base-font-family;
+    border: 1px solid rgb(9, 35, 184);
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    user-select: none;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    &:hover{
+        background-color: #134698;
+        transition: all 0.1s ease-in-out;
+    }
 }
