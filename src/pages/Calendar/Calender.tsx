@@ -9,6 +9,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from "@mui/material/Modal";
 import { inElement } from "../../helpers/CalendarHelpers";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import { IconButton } from "@mui/material";
 const events = [
   { title: "Meeting", start: new Date(), end: new Date() },
   { title: "Washing", start: new Date(2023, 2, 4), end: new Date(2023, 2, 8) },
@@ -26,17 +28,6 @@ const Calendar: React.FC = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   function handleAddNewEvent() {
-    for (let i = 0; i < allEvents.length; i++) {
-      const d1 = new Date(allEvents[i].start);
-      const d2 = new Date(newEvent.start);
-      const d3 = new Date(allEvents[i].end);
-      const d4 = new Date(newEvent.end);
-
-      if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
-        alert("CLASH");
-        break;
-      }
-    }
     setAllEvents([...allEvents, newEvent]);
     setNewEvent({
       title: "",
@@ -64,7 +55,7 @@ const Calendar: React.FC = () => {
     <div className="Calendar">
       <div className="wrapp-calendar">
         <h2>Calendar</h2>
-        <h2 onClick={handleOpen}>Add New Event</h2>
+
         <Modal
           open={open}
           onClose={handleClose}
@@ -104,7 +95,16 @@ const Calendar: React.FC = () => {
             </div>
           </div>
         </Modal>
+
         <div ref={container}>
+          <div className="icon-create-evt">
+            <button onClick={handleOpen}>
+              <div >
+                <AddBoxIcon />
+              </div>
+              <div>Create new event</div>
+            </button>
+          </div>
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"

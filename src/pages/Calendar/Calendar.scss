@@ -1,35 +1,51 @@
 @import "../../sassStyles/mixins";
-.Calendar{
+
+.Calendar {
     background-color: #364153;
     height: 100%;
 }
-.wrapp-calendar{
+
+.wrapp-calendar {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.modal-add-event{
+.modal-add-event {
     @include centerElement(column);
 }
 
-.add-event{
+.add-event {
     @include centerElement(column);
     background-color: #2a2a2a;
     height: 500px;
     width: 400px;
     border-radius: 20px;
 
-    .title-event{
+    .title-event {
         @include inputStyle();
         width: 200px !important;
         display: block;
     }
-    input[type="text"]{
+
+    input[type="text"] {
         @extend .title-event;
     }
-    .add-event-btn{
+
+    .add-event-btn {
         button {
             @include btn()
         }
+    }
+}
+
+.icon-create-evt {
+    color: orange;
+    @include centerElement();
+
+    button {
+        @include btn(#253e66, #355e9e);
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-around;
     }
 }

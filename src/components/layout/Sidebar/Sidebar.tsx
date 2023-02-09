@@ -6,6 +6,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Tooltip } from "@mui/material";
+import { Link } from "react-router-dom";
 const Sidebar: React.FC = () => {
   return (
     <div className="Sidebar">
@@ -18,7 +19,9 @@ const Sidebar: React.FC = () => {
                 <HomeIcon />
               </Tooltip>
             </span>
-            <span className="side-text">Dashboard</span>
+            <span className="side-text">
+              <Link to="/">Dashboard</Link>
+            </span>
           </li>
           <li>
             <span className="side-icon">
@@ -50,7 +53,9 @@ const Sidebar: React.FC = () => {
                 <QueryStatsIcon />
               </Tooltip>
             </span>
-            <span className="side-text">Calender</span>
+            <span className="side-text">
+              <Link to="calendar">Calendar</Link>
+            </span>
           </li>
         </ul>
         <div className="footer-sidebar">

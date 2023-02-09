@@ -50,7 +50,7 @@ $small: 480px;
     outline-color: $outColor;
 }
 
-@mixin btn($bgColor: #0f4eb3, $txtColor: whiteSmoke){
+@mixin btn($bgColor: #0f4eb3,$brColor:rgb(9, 35, 184), $txtColor: whiteSmoke){
     padding: 6px 16px;
     margin: 1rem 0.5rem;
     border-radius: 6px;
@@ -61,14 +61,14 @@ $small: 480px;
     font-weight: 400;
     line-height: 20px;
     font-family: $base-font-family;
-    border: 1px solid rgb(9, 35, 184);
+    border: 1px solid $brColor;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     user-select: none;
     display: inline-block;
     white-space: nowrap;
     position: relative;
     &:hover{
-        background-color: #134698;
+        background-color: $brColor;
         transition: all 0.1s ease-in-out;
     }
 }
