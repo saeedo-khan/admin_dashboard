@@ -92,9 +92,14 @@ const Datatable: React.FC<DatatableProps> = () => {
   ];
   return (
     <div className="Datatable">
-      <p>Recent Orders</p>
+      <p className="title-table">Recent Orders</p>
       <DataGrid
-        className="datagrid"
+        sx={{
+          boxShadow: 2,
+          bgcolor: "#364153",
+          border: 1,
+          borderColor: "transparent",
+        }}
         rows={rows}
         columns={cols.concat(actionColumn)}
         pageSize={9}

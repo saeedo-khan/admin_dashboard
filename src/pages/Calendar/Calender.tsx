@@ -99,7 +99,7 @@ const Calendar: React.FC = () => {
         <div ref={container}>
           <div className="icon-create-evt">
             <button onClick={handleOpen}>
-              <div >
+              <div>
                 <AddBoxIcon />
               </div>
               <div>Create new event</div>
@@ -125,6 +125,7 @@ const Calendar: React.FC = () => {
             select={add}
             events={allEvents}
             selectOverlap={false}
+            eventContent={renderEventContent}
           />
         </div>
       </div>

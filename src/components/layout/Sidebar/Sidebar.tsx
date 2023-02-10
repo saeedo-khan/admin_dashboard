@@ -37,7 +37,9 @@ const Sidebar: React.FC = () => {
                 <LocalMallIcon />
               </Tooltip>
             </span>
-            <span className="side-text">Products</span>
+            <span className="side-text">
+              <Link to="/products">Products</Link>
+            </span>
           </li>
           <li>
             <span className="side-icon">

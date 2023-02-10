@@ -74,7 +74,7 @@ const MiniOrder: React.FC<MiniOrderProps> = ({}) => {
   );
 
   return (
-    <div className="MiniOrder" style={{ height: "300px", width: "100%" }}>
+    <div style={{ height: "300px", width: "100%" }}>
       <DataGrid
         checkboxSelection
         rows={rows}
