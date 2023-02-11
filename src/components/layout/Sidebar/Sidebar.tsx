@@ -29,7 +29,9 @@ const Sidebar: React.FC = () => {
                 <DriveFileRenameOutlineIcon />
               </Tooltip>
             </span>
-            <span className="side-text">Order</span>
+            <span className="side-text">
+              <Link to="/orders">Orders</Link>
+            </span>
           </li>
           <li>
             <span className="side-icon">

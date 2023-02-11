@@ -50,7 +50,7 @@ $small: 480px;
     outline-color: $outColor;
 }
 
-@mixin btn($bgColor: #0f4eb3,$brColor:rgb(9, 35, 184), $txtColor: whiteSmoke){
+@mixin btn($bgColor: #0f4eb3,$brColor:rgb(9, 35, 184), $hColor: #2c518e, $txtColor: whiteSmoke){
     padding: 6px 16px;
     margin: 1rem 0.5rem;
     border-radius: 6px;
@@ -68,7 +68,7 @@ $small: 480px;
     white-space: nowrap;
     position: relative;
     &:hover{
-        background-color: $brColor;
+        background-color: $hColor;
         transition: all 0.1s ease-in-out;
     }
 }

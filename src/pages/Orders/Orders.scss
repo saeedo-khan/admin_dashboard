@@ -1,0 +1,33 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+.Orders {
+    background-color: $main-color;
+    height: 100%;
+}
+.container-datatable{
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+.header{
+    width: 100%;
+    background-color: $main-color;
+    height: 5vh;    
+    .order-btn{
+        @include btn($third-color, $main-color, #454a4d);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &:first-of-type{
+            background: $fifth-color;
+        }
+    }
+}
+
+.datatable-wrapp{
+    height: 800px;
+    margin-top: 2rem;
+}
+

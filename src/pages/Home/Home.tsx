@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         </div>
         <div className="wrap-bottom">
           <div className="bottom-order">
-            <Datatable />
+            <Datatable rowsPerPage={5} />
           </div>
           <div className="bottom-product">
             <div className="procut-wrapper">
