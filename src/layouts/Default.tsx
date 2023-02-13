@@ -1,14 +1,15 @@
 import React from "react";
 import Sidebar from "../components/layout/Sidebar/Sidebar";
+import "./DefaultLayout.scss";
 interface DefaultLayoutProps {
   children: React.ReactNode;
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="DefaultLayout">
       <Sidebar />
-      <main style={{ flex: "10" }}>{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

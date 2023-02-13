@@ -6,60 +6,90 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Tooltip } from "@mui/material";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Sidebar: React.FC = () => {
+  let activeStyle = {
+    color: "whitesmoke !important",
+  };
   return (
     <div className="Sidebar">
       <div className="content">
         <div className="logo">Logo</div>
         <ul className="list-sidebar">
           <li>
-            <span className="side-icon active">
-              <Tooltip title="Home">
-                <HomeIcon />
-              </Tooltip>
-            </span>
-            <span className="side-text">
-              <Link to="/">Dashboard</Link>
-            </span>
+            <NavLink
+              to="/"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              <>
+                <span className="side-icon active">
+                  <Tooltip title="Home">
+                    <HomeIcon />
+                  </Tooltip>
+                </span>
+                <span className="side-text">Dashboard</span>
+              </>
+            </NavLink>
           </li>
           <li>
-            <span className="side-icon">
-              <Tooltip title="Orders">
-                <DriveFileRenameOutlineIcon />
-              </Tooltip>
-            </span>
-            <span className="side-text">
-              <Link to="/orders">Orders</Link>
-            </span>
+            <NavLink
+              to="orders"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              <>
+                <span className="side-icon">
+                  <Tooltip title="Orders">
+                    <DriveFileRenameOutlineIcon />
+                  </Tooltip>
+                </span>
+                <span className="side-text">Orders</span>
+              </>
+            </NavLink>
           </li>
           <li>
-            <span className="side-icon">
-              <Tooltip title="Products">
-                <LocalMallIcon />
-              </Tooltip>
-            </span>
-            <span className="side-text">
-              <Link to="/products">Products</Link>
-            </span>
+            <NavLink
+              to="products"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              <>
+                <span className="side-icon">
+                  <Tooltip title="Products">
+                    <LocalMallIcon />
+                  </Tooltip>
+                </span>
+                <span className="side-text">Products</span>
+              </>
+            </NavLink>
           </li>
           <li>
-            <span className="side-icon">
-              <Tooltip title="Analyzer">
-                <QueryStatsIcon />
-              </Tooltip>
-            </span>
-            <span className="side-text">Analyzer</span>
+            <NavLink
+              to="/"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              <>
+                <span className="side-icon">
+                  <Tooltip title="Analyzer">
+                    <QueryStatsIcon />
+                  </Tooltip>
+                </span>
+                <span className="side-text">Users</span>
+              </>
+            </NavLink>
           </li>
           <li>
-            <span className="side-icon">
-              <Tooltip title="Analyzer">
-                <QueryStatsIcon />
-              </Tooltip>
-            </span>
-            <span className="side-text">
-              <Link to="calendar">Calendar</Link>
-            </span>
+            <NavLink
+              to="calendar"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              <>
+                <span className="side-icon">
+                  <Tooltip title="Analyzer">
+                    <QueryStatsIcon />
+                  </Tooltip>
+                </span>
+                <span className="side-text">Calendar</span>
+              </>
+            </NavLink>
           </li>
         </ul>
         <div className="footer-sidebar">

@@ -1,122 +1,56 @@
-import { GridRowsProp } from "@mui/x-data-grid";
+import { GridColDef, GridRowsProp } from "@mui/x-data-grid";
 
 // add dynamic name color variant to status cell 
 const objVal = [
-  { name: "Pending", color: "primary", variant: "outlined"},
-  { name: "Approved", color: "success", variant: "filled"},
-  { name: "Failed", color: "error", variant: "filled"},
+  { name: "Pending", color: "primary", variant: "outlined" },
+  { name: "Approved", color: "success", variant: "filled" },
+  { name: "Failed", color: "error", variant: "filled" },
 ];
 
-export const rows: GridRowsProp = [
+export const initOrdersRow: GridRowsProp = [
   {
     id: 1,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 37",
+    order_no: 68451,
+    date: "05/07/2023",
+    customer_name: "Ahmed Mohammed",
+    email: "ahmedml@gmail.com",
+    price: 55,
     status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
   },
   {
     id: 2,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
+    order_no: 84964,
+    date: "03/01/2023",
+    customer_name: "Salem Ibrahim",
+    email: "ib.salem@gmail.com",
+    price: 32,
     status: objVal[1],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 3,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
-    status: objVal[2],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 4,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 37",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 5,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
-    status: objVal[1],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 6,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 7,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 8,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 21",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 9,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 99",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
-  {
-    id: 10,
-    tracking_no: 68451,
-    product_image:
-      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    product_name: "Nike shoes",
-    price: "$ 45",
-    status: objVal[0],
-    total_order: 320,
-    total_amount: 32.0,
-  },
+  }
 ];
 
+
+export const initProductsRow: GridRowsProp = [
+  {
+    id: 1,
+    product_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    product_name: "Nike shoes",
+    category: "Men, Watch",
+    price: 55,
+    stock: 500,
+    sold: 65,
+    revenew: 14950,
+  },
+  {
+    id: 2,
+    product_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    product_name: "Blue Grey Backpack",
+    category: "Men, Backpack",
+    price: 150,
+    stock: 380,
+    sold: 74,
+    revenew: 11100,
+  },
+  
+];

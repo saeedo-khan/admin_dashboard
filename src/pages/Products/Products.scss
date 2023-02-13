@@ -1,0 +1,15 @@
+@import "../../sassStyles/variables";
+.Products {
+    background-color: $main-color;
+    height: 100%;
+    .container-products{
+        max-width: 1300px;
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+.datatable-products{
+    height: 800px;
+    margin-top: 2rem;
+}

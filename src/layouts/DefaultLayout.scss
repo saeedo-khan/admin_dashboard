@@ -1,0 +1,11 @@
+@import "../sassStyles/mixins";
+.DefaultLayout{
+    display: flex;
+    @include bp-small{
+        flex-direction: column-reverse;
+    }
+}
+
+main{
+    flex: 10;
+}
