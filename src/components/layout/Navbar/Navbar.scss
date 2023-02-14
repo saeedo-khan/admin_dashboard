@@ -1,0 +1,13 @@
+@import "../../../sassStyles/variables";
+@import "../../../sassStyles/mixins";
+.Navbar{
+    background-color: $main-color;
+    display: flex;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

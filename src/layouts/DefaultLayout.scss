@@ -1,11 +1,46 @@
 @import "../sassStyles/mixins";
-.DefaultLayout{
+
+.default-main{
     display: flex;
+    flex-direction: column;
     @include bp-small{
-        flex-direction: column-reverse;
+        display: block;
     }
 }
 
-main{
-    flex: 10;
+.layout-main{
+    display: flex;
+    @include bp-small{
+        flex-direction: column-reverse;
+        height: 100%;
+    }
 }
+
+header{
+    @include bp-medium{
+        display: none;
+    }
+}
+
+
+.Sidebar{
+    flex: 1;
+    @include bp-medium{
+        height: 100vh;
+        position: sticky;
+        left: 0;
+        top: 0;
+    }
+    @include bp-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+main{
+    flex: 9;
+}
+
+
