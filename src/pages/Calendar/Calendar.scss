@@ -1,8 +1,9 @@
 @import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
 
 .Calendar {
-    background-color: #364153;
-    height: 100vh;
+    background-color: #252539;
+    height: 100%;
 }
 
 .wrapp-calendar {

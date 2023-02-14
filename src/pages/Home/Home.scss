@@ -2,9 +2,8 @@
 @import "../../sassStyles/mixins";
 
 .home-content{
-    width: 100%;
-    background-color: #161718;
-    height: 100%;
+    background-color: $second-color;
+    min-height: 100vh;
 }
 
 .home-container {
@@ -49,8 +48,9 @@
     }
     .main-chart {
         flex: 2;
-        border-radius: $base-border-radius;
-        background: #364153;
+        border-radius: 6px;
+        border: 1px solid rgba(245, 245, 245, 0.364);
+        background: $main-color;
         height: 340px;
         @include centerElement();
         @include bp-medium{
@@ -63,8 +63,9 @@
 
     .main-pie {
         flex: 1;
-        border-radius: $base-border-radius;
-        background-color: #364153;
+        border-radius: 6px;
+        border: 1px solid rgba(245, 245, 245, 0.364);
+        background-color: $main-color;
         height: 340px;
         @include centerElement();
         @include bp-medium{
@@ -78,7 +79,7 @@
     align-items: center;
     gap: 3rem;
     flex-wrap: wrap-reverse;
-    margin-top: 1.5rem;
+    // margin-top: 1.5rem;
 
     .bottom-order {
         flex: 2;
@@ -93,8 +94,9 @@
 
     .bottom-product {
         flex: 1;
-        border-radius: $base-border-radius;
-        background: #364153;
+        border-radius: 6px;
+        border: 1px solid rgba(245, 245, 245, 0.364);
+        background: $main-color;
         height: 330px;
         width: 300px;
         @include centerElement();
@@ -108,8 +110,9 @@
             @include centerElement(column);
             .title{
                 margin-bottom: 1rem;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 font-weight: 400;
+                color: whitesmoke;
             }
             @include bp-small{
                 width: 80%;

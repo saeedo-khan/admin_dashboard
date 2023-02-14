@@ -1,95 +1,85 @@
 @import "../../../sassStyles/variables";
 @import "../../../sassStyles/mixins";
 
-.Sidebar {
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-color;
+  height: 100%;
+  @include bp-small {
+    flex-direction: row;
+    height: auto;
+  }
+  .logo {
     flex: 1;
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include bp-small {
-        bottom: 0;
-        left: 0;
-        flex: 1;
-        z-index: 1000;
-        height: auto;
+      display: none;
+    }
+  }
+
+  .list-sidebar {
+    flex: 2;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%;
+    @include bp-small {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
     }
 
-    .content{
-        height: 100vh;
+    li {
+      padding: 5px;
+      margin: 1rem 0;
+      cursor: pointer;
+      color: whitesmoke;
+      width: 60%;
+      .wrap-text-icon {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        background-color: rgb(34, 37, 52);
-        @include bp-small {
-            flex-direction: row;
-            height: auto;
-        }
-        .logo {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            @include bp-small{
-                display: none;
+        justify-content: flex-start;
+        width: 50%;
+        margin: 0 auto;
+        .side-icon {
+          color: rgb(125, 125, 125);
+          @include bp-medium {
+            &:hover {
+              color: whitesmoke;
+              transition: 0.5s ease;
             }
+          }
         }
-    
-        .list-sidebar {
-            flex: 8;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            @include bp-small {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-            }
-    
-            li {
-                display: flex;
-                align-items: space-around;
-                justify-content: space-around;
-                padding: 5px;
-                margin: 1rem 0;
-                cursor: pointer;
-                color: whitesmoke;
-                text-decoration: none;
-    
-                .side-icon {
-                    color: rgb(125, 125, 125);
-    
-                    @include bp-medium {
-                        &:hover {
-                            color: whitesmoke;
-                            transition: 0.5s ease;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+}
 
-    
+.footer-sidebar {
+  flex: 1;
+  @include centerElement();
 
-    .footer-sidebar {
-        flex: 1;
-        @include centerElement();
+  @include bp-small {
+    display: none;
+  }
 
-        @include bp-small{
-            display: none;
-        }
-
-        span {
-            cursor: pointer;
-        }
-    }
+  span {
+    cursor: pointer;
+  }
 }
 
 .side-text {
-    @include bp-medium {
-        display: none;
-    }
+  @include bp-medium {
+    display: none;
+  }
 }
 
 // .active {
