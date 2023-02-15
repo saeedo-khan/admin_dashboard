@@ -6,54 +6,53 @@
     flex: 1;
     margin: $base-margin;
     border-radius: 6px;
+    min-width: 160px;
     background: #7F00FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #c300ff, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     .container {
         height: 80px;
         display: flex;
         align-items: center;
+        gap: 10%;
     }
 }
 
 .col-icon {
-    flex: 1;
+    flex-basis: 30%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    
     span {
         background-color: rgb(60, 20, 99);
         color: rgb(124, 72, 176);
-        padding: 1rem;
+        width: 50px;
+        height: 50px;
         border-radius: 70px;
         @include centerElement();
-        @include bp-large{
-            padding: 0.5rem
-        }
+        
     }
 }
 
 .col-text{
-    flex: 3;
+    flex-basis: 60%;
     @include centerElement(column);
-    align-items: flex-start;
+    align-items: center;
     cursor: default;
-    @include bp-large{
-        flex: 2
-    }
     
     .statsNum{
         font-size: 1.5rem;
         font-weight: bold;
         color: rgb(200, 200, 200);
-        @include bp-large{
-            font-size: 1rem;
-        }
+        
+        
     }
     .title-box {
         color: rgb(200, 200, 200);
         text-transform: capitalize;
         font-family: $base-font-family;
         font-size: 1rem;
+        
     }
 }

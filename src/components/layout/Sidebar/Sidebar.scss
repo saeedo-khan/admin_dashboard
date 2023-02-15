@@ -8,10 +8,7 @@
   align-items: center;
   background-color: $main-color;
   height: 100%;
-  @include bp-small {
-    flex-direction: row;
-    height: auto;
-  }
+  
   .logo {
     flex: 1;
     display: flex;
@@ -32,9 +29,7 @@
     align-items: baseline;
     width: 100%;
     @include bp-small {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+      justify-content: center;
     }
 
     li {
@@ -49,6 +44,9 @@
         justify-content: flex-start;
         width: 50%;
         margin: 0 auto;
+        @include bp-small{
+          width: 90%;
+        }
         .side-icon {
           color: rgb(125, 125, 125);
           @include bp-medium {
@@ -67,9 +65,6 @@
   flex: 1;
   @include centerElement();
 
-  @include bp-small {
-    display: none;
-  }
 
   span {
     cursor: pointer;
@@ -85,3 +80,11 @@
 // .active {
 //     color: whitesmoke !important;
 // }
+
+
+.mini-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+}

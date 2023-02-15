@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.scss";
 import HomeIcon from "@mui/icons-material/Home";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Tooltip } from "@mui/material";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { IconButton, Tooltip } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 const Sidebar: React.FC = () => {
   let activeStyle = {
     color: "whitesmoke !important",
   };
+
   return (
     <div className="content">
       <div className="logo">Logo</div>

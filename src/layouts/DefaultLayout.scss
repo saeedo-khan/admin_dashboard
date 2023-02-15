@@ -10,10 +10,6 @@
 
 .layout-main{
     display: flex;
-    @include bp-small{
-        flex-direction: column-reverse;
-        height: 100%;
-    }
 }
 
 header{
@@ -25,22 +21,22 @@ header{
 
 .Sidebar{
     flex: 1;
-    @include bp-medium{
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 50px;
+    @include bp-small{
+        top: 0px;
         height: 100vh;
-        position: sticky;
-        left: 0;
-        top: 0;
-    }
-    @include bp-small {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-basis: 10%;
     }
 }
 
 
 main{
     flex: 9;
+    @include bp-small{
+        flex-basis: 90%;
+    }
 }
 
 

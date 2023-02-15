@@ -9,6 +9,7 @@
 .wrapp-calendar {
     max-width: 1400px;
     margin: 0 auto;
+    width: 80%;
 }
 
 .modal-add-event {
@@ -48,5 +49,20 @@
         display: inline-flex;
         align-items: center;
         justify-content: space-around;
+    }
+}
+
+.fc-toolbar-title{
+    @include bp-small{
+        font-size: 1.1rem !important;
+        color: whitesmoke;
+        font-family: $base-font-family;
+        text-align: center;
+    }
+}
+
+.fc{
+    @include bp-small{
+        font-size: 0.9rem !important;
     }
 }

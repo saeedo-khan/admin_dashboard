@@ -17,15 +17,19 @@
         width: 100px;
         height: 110px;
         border-radius: $base-border-radius;
+        @include bp-small{
+            width: 80px;
+            height: 90px;
+        }
     }
 }
 
 .product-data {
     flex: 2;
     p {
-        color: black;
+        color: rgb(98, 96, 96);
     }
     .product-price{
-        color: black;
+        color: rgb(101, 101, 101);
     }
 }

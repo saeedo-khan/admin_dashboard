@@ -120,19 +120,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 //   );
 // }
 
-
-
-export default function Navbar(){
+export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  return(
+  return (
     <div className="Navbar">
-        <div className="container">
-          <div className="logo">Logo</div>
-          <div className="search-bar">
+      <div className="container">
+        <div className="logo"></div>
+        <div className="search-bar">
           <Search sx={{ flex: 1 }}>
             <SearchIconWrapper>
               <SearchIcon />
@@ -142,8 +140,8 @@ export default function Navbar(){
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          </div>
-          <div className="user-refrence">
+        </div>
+        <div className="user-refrence">
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
@@ -174,8 +172,8 @@ export default function Navbar(){
               <AccountCircle />
             </IconButton>
           </Box>
-          </div>
         </div>
+      </div>
     </div>
-  )
+  );
 }
