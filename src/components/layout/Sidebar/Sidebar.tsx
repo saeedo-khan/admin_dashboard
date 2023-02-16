@@ -65,7 +65,7 @@ const Sidebar: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to="/"
+            to="/users"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <div className="wrap-text-icon">

@@ -7,9 +7,9 @@
 }
 
 .wrapp-calendar {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
-    width: 80%;
+    width: 80%
 }
 
 .modal-add-event {
@@ -65,4 +65,25 @@
     @include bp-small{
         font-size: 0.9rem !important;
     }
+}
+
+
+.container-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem
+}
+
+.title-form{
+    @include inputStyle(#5e4880);
+    background-color: $main-color;
+    color: whitesmoke;
+}
+
+.data-picker{
+    z-index: 999;
+    display: block;
 }

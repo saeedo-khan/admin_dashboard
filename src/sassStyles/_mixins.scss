@@ -41,13 +41,13 @@ $small: 480px;
 }
 
 
-@mixin inputStyle($outColor: #5a86b5,$fSize: 14px){
-    padding: 10px;
+@mixin inputStyle($outColor: #5a86b5,$fSize: 0.9rem){
+    padding: 6px 10px;
     margin: 0.5rem;
+    border: 1px solid $outColor;
+    border-radius: 4px;
+    display: block;
     font-size: $fSize;
-    border: none;
-    border-radius: 10px;
-    outline-color: $outColor;
 }
 
 @mixin btn($bgColor: #0f4eb3,$brColor:rgb(9, 35, 184), $hColor: #2c518e, $txtColor: whiteSmoke){

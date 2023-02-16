@@ -16,7 +16,7 @@ const events = [
   { title: "Washing", start: new Date(2023, 2, 4), end: new Date(2023, 2, 8) },
 ];
 type NewEvent = { title: string; start: any; end: any };
-const Calendar: React.FC = () => {
+const Calender: React.FC = () => {
   const container = useRef(null);
   const [newEvent, setNewEvent] = React.useState<NewEvent>({
     title: "",
@@ -24,9 +24,6 @@ const Calendar: React.FC = () => {
     end: "",
   });
   const [allEvents, setAllEvents] = React.useState(events);
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   function handleAddNewEvent() {
     setAllEvents([...allEvents, newEvent]);
     setNewEvent({
@@ -34,7 +31,6 @@ const Calendar: React.FC = () => {
       start: "",
       end: "",
     });
-    handleClose();
   }
 
   const remove = ({
@@ -55,56 +51,45 @@ const Calendar: React.FC = () => {
     <div className="Calendar">
       <div className="wrapp-calendar">
         <h2>Calendar</h2>
-
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          className="modal-add-event"
-        >
-          <div className="add-event">
+        <div className="icon-create-evt">
+          <button onClick={handleAddNewEvent}>
+            <div>
+              <AddBoxIcon />
+            </div>
+            <div>Create new event</div>
+          </button>
+        </div>
+        <form className="container-form">
+          <label>
+            Add Title:
             <input
               type="text"
-              className="title-event"
-              placeholder="Add Title"
-              style={{ width: "20%" }}
-              value={newEvent.title}
-              onChange={(e) =>
-                setNewEvent({ ...newEvent, title: e.target.value })
-              }
+              name="title"
+              className="title-form"
+              placeholder="title .."
             />
-            <p>Start Date</p>
-            <div>
-              <DatePicker
-                placeholderText="Start Date"
-                selected={newEvent.start}
-                onChange={(start) => setNewEvent({ ...newEvent, start })}
-              />
-            </div>
-            <p>End Date</p>
-            <div>
-              <DatePicker
-                placeholderText="End Date"
-                selected={newEvent.end}
-                onChange={(end) => setNewEvent({ ...newEvent, end })}
-              />
-            </div>
-            <div className="add-event-btn">
-              <button onClick={handleAddNewEvent}>Add Event</button>
-            </div>
-          </div>
-        </Modal>
+          </label>
+          <label>
+            Start Date:
+            <DatePicker
+              placeholderText="Start Date"
+              selected={newEvent.start}
+              onChange={(start) => setNewEvent({ ...newEvent, start })}
+              className="title-form data-picker"
+            />
+          </label>
+          <label>
+            End Date:
+            <DatePicker
+              placeholderText="End Date"
+              selected={newEvent.start}
+              onChange={(start) => setNewEvent({ ...newEvent, start })}
+              className="title-form data-picker"
+            />
+          </label>
+        </form>
 
         <div ref={container}>
-          <div className="icon-create-evt">
-            <button onClick={handleOpen}>
-              <div>
-                <AddBoxIcon />
-              </div>
-              <div>Create new event</div>
-            </button>
-          </div>
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
@@ -114,7 +99,7 @@ const Calendar: React.FC = () => {
             headerToolbar={{
               left: "prev,next",
               center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay",
+              right: "dayGridMonth,dayGridWeek,dayGridDay",
             }}
             aspectRatio={6}
             height={600}
@@ -143,4 +128,4 @@ function renderEventContent(eventInfo: any) {
   );
 }
 
-export default Calendar;
+export default Calender;

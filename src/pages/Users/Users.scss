@@ -1,0 +1,24 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+.users{
+    background-color: $main-color;
+    height: 100%;
+
+    .users-container{
+        max-width: 1500px;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+.add-user-btn{
+    @include btn($fifth-color, $main-color, #5063c3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-datatable{
+    height: 800px;
+    margin-top: 2rem;
+}
