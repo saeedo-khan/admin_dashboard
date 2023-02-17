@@ -4,6 +4,8 @@ import { GridCellParams, GridColDef } from "@mui/x-data-grid";
 import Datatable from "../../components/Datatable/Datatable";
 import { initProductsRow } from "../../utils/tableRows";
 import "./Products.scss";
+import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 const Products: React.FC = () => {
   const [productRow, setProductRow] = useState(initProductsRow);
@@ -43,7 +45,14 @@ const Products: React.FC = () => {
   return (
     <div className="Products">
       <div className="container-products">
-        <div className="header"></div>
+        <div className="header">
+          <button className="product-btn">
+            <AddIcon />
+            <Link to="/newproduct" className="text-link">
+              <span>New Product</span>
+            </Link>
+          </button>
+        </div>
         <div className="datatable-products">
           <Datatable rowsPerPage={7} rows={productRow} columns={cols} />
         </div>

@@ -5,6 +5,7 @@ import Calender from "./pages/Calendar/Calender";
 import Products from "./pages/Products/Products";
 import Orders from "./pages/Orders/Orders";
 import Users from "./pages/Users/Users";
+import NewProduct from "./pages/NewProduct/NewProduct";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/newproduct" element={<NewProduct />} />
       </Routes>
     </>
   );

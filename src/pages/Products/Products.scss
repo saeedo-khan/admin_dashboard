@@ -1,4 +1,5 @@
 @import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
 .Products {
     background-color: $main-color;
     height: 100%;
@@ -12,4 +13,24 @@
 .datatable-products{
     height: 800px;
     margin-top: 2rem;
+}
+
+.header{
+    width: 100%;
+    background-color: $main-color;
+    height: 5vh;    
+    .product-btn{
+        @include btn($third-color, $main-color, #454a4d);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &:first-of-type{
+            background: $fifth-color;
+        }
+    }
+}
+
+.text-link{
+    color: inherit;
+    text-decoration: inherit;
 }

@@ -1,0 +1,43 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+.new-product{
+    background: $main-color;
+    height: 100%;
+    .container{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+.new-product-title{
+    color: whitesmoke;
+    padding-top: 2rem;
+}
+
+.new-product-form{
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    margin-top: 4rem;
+}
+
+.new-product-item{
+    width: 270px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    label{
+        color: whitesmoke;
+        font-weight: 600;
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+    }
+    input{
+        @include inputStyle(#7c4a88);
+        background-color: $third-color;
+        color: whitesmoke;
+    }
+    .create-product{
+        @include btn(#7c4a88, #57395e, #76537d);
+    }
+}
