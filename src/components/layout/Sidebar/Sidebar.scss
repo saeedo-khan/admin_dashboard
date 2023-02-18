@@ -1,19 +1,40 @@
 @import "../../../sassStyles/variables";
 @import "../../../sassStyles/mixins";
 
+.expand-sidebar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  color: whitesmoke;
+}
+
+.Sidebar{
+  flex: 1;
+  height: calc(100vh - 1px);
+  position: sticky;
+  top: 50px;
+  @include bp-small{
+    top: 0px;
+    height: 100vh;
+    flex-basis: 10%;
+  }
+}
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $main-color;
+  background-color: $second-color;
   height: 100%;
   
+
   .logo {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+
     @include bp-small {
       display: none;
     }
@@ -26,8 +47,9 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
     width: 100%;
+
     @include bp-small {
       justify-content: center;
     }
@@ -36,19 +58,23 @@
       padding: 5px;
       margin: 1rem 0;
       cursor: pointer;
-      color: whitesmoke;
-      width: 60%;
+      width: 100%;
+
       .wrap-text-icon {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        width: 50%;
-        margin: 0 auto;
-        @include bp-small{
+        justify-content: baseline;
+        margin-inline: auto;
+        width: 80%;
+
+        @include bp-small {
           width: 90%;
         }
+
         .side-icon {
           color: rgb(125, 125, 125);
+          margin-right: 0.5rem;
+
           @include bp-medium {
             &:hover {
               color: whitesmoke;
@@ -64,22 +90,36 @@
 .footer-sidebar {
   flex: 1;
   @include centerElement();
+  align-items: baseline;
 
-
-  span {
+  .logout-sidebar {
+    display: flex;
     cursor: pointer;
+    color: whitesmoke;
+    background-color: #4758af4c;
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    span {
+      @include bp-small {
+        display: none;
+      }
+    }
   }
 }
 
 .side-text {
+  color: rgb(135, 129, 129);
+
   @include bp-medium {
     display: none;
   }
 }
 
-// .active {
-//     color: whitesmoke !important;
-// }
+.nav-link {
+  text-decoration: inherit;
+  color: inherit;
+}
 
 
 .mini-sidebar {

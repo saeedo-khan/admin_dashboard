@@ -19,17 +19,6 @@ header{
 }
 
 
-.Sidebar{
-    flex: 1;
-    height: calc(100vh - 50px);
-    position: sticky;
-    top: 50px;
-    @include bp-small{
-        top: 0px;
-        height: 100vh;
-        flex-basis: 10%;
-    }
-}
 
 
 main{

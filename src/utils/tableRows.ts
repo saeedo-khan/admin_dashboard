@@ -54,3 +54,30 @@ export const initProductsRow: GridRowsProp = [
   },
   
 ];
+
+
+export const initCustomers: GridRowsProp = [
+  {
+    id: 1,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Jane Cooper",
+    spent: "3.675",
+    last_ordered: "25/2/2023",
+    email: 'jibonze@gmail.com',
+    phone: '01642 39541',
+    status: 'Active',
+  },
+  {
+    id: 2,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "6.745",
+    last_ordered: "1/2/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: 'Inactive',
+  },
+  
+];

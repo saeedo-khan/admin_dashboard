@@ -15,9 +15,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
         <PrimarySearchAppBar />
       </header>
       <div className="layout-main">
-        <div className="Sidebar">
-          <Sidebar />
-        </div>
+        <Sidebar />
         <main>{children}</main>
       </div>
     </div>
