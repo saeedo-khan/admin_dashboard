@@ -1,22 +1,13 @@
 @import "../../../sassStyles/variables";
 @import "../../../sassStyles/mixins";
 
-.expand-sidebar{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  color: whitesmoke;
-}
-
 .Sidebar{
   flex: 1;
   height: calc(100vh - 1px);
   position: sticky;
   top: 50px;
-  @include bp-small{
+  @include bp-medium{
     top: 0px;
-    height: 100vh;
     flex-basis: 10%;
   }
 }
@@ -25,7 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $second-color;
+  // background-color: $fifth-color;
+  background-image: linear-gradient(to bottom right, #d572ff, #9e10d1);
   height: 100%;
   
 
@@ -35,7 +27,7 @@
     align-items: center;
     justify-content: center;
 
-    @include bp-small {
+    @include bp-medium {
       display: none;
     }
   }
@@ -50,7 +42,7 @@
     align-items: center;
     width: 100%;
 
-    @include bp-small {
+    @include bp-medium {
       justify-content: center;
     }
 
@@ -58,7 +50,15 @@
       padding: 5px;
       margin: 1rem 0;
       cursor: pointer;
-      width: 100%;
+      width: 160px;
+      border-radius: 6px;
+      &:hover{
+        background-color: rgba(229, 115, 255, 0.775);
+      }
+
+      @include bp-medium{
+        width: 80%;
+      }
 
       .wrap-text-icon {
         display: flex;
@@ -66,13 +66,13 @@
         justify-content: baseline;
         margin-inline: auto;
         width: 80%;
+        color: whitesmoke;
 
-        @include bp-small {
+        @include bp-medium {
           width: 90%;
         }
 
         .side-icon {
-          color: rgb(125, 125, 125);
           margin-right: 0.5rem;
 
           @include bp-medium {
@@ -80,6 +80,12 @@
               color: whitesmoke;
               transition: 0.5s ease;
             }
+          }
+        }   
+        .side-text {
+          font-family: 'Roboto', sans-serif;
+          @include bp-medium {
+            display: none;
           }
         }
       }
@@ -92,6 +98,7 @@
   @include centerElement();
   align-items: baseline;
 
+
   .logout-sidebar {
     display: flex;
     cursor: pointer;
@@ -99,32 +106,22 @@
     background-color: #4758af4c;
     padding: 6px 10px;
     border-radius: 4px;
+    @include bp-medium{
+      background-color: inherit;
+    }
 
     span {
-      @include bp-small {
+      font-family: 'DM Sans', sans-serif;
+      @include bp-medium {
         display: none;
       }
     }
   }
 }
 
-.side-text {
-  color: rgb(135, 129, 129);
-
-  @include bp-medium {
-    display: none;
-  }
-}
 
 .nav-link {
   text-decoration: inherit;
   color: inherit;
 }
 
-
-.mini-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: block;
-}

@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { Chip } from "@mui/material";
+import { Chip, Menu, MenuItem } from "@mui/material";
 import { GridCellParams, GridColDef } from "@mui/x-data-grid";
 import Datatable from "../../components/Datatable/Datatable";
 import { initProductsRow } from "../../utils/tableRows";
 import "./Products.scss";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const Products: React.FC = () => {
   const [productRow, setProductRow] = useState(initProductsRow);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const cols: GridColDef[] = [
     {
       field: "product_name",
@@ -52,6 +61,19 @@ const Products: React.FC = () => {
               <span>New Product</span>
             </Link>
           </button>
+          <div className="wrap-sort">
+            <button className="sort-btn" onClick={handleClick}>
+              <span>Status</span>
+              <span>
+                <MoreVertIcon fontSize="small" />
+              </span>
+            </button>
+            <Menu open={open} anchorEl={anchorEl}>
+              <MenuItem onClick={handleClose}>Pending</MenuItem>
+              <MenuItem onClick={handleClose}>Approved</MenuItem>
+              <MenuItem onClick={handleClose}>Failed</MenuItem>
+            </Menu>
+          </div>
         </div>
         <div className="datatable-products">
           <Datatable rowsPerPage={7} rows={productRow} columns={cols} />

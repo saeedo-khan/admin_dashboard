@@ -2,22 +2,17 @@
 @import "../../sassStyles/mixins";
 
 .home-content{
-    background-color: $second-color;
+    background-color: $main-color;
     min-height: 100vh;
 }
 
 .home-container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
-
-    @include bp-medium {
-        max-width: 600px;
-        width: 80%;
-    }
-
+    overflow: hidden;
+    width: 80%;
 }
 
 
@@ -35,19 +30,20 @@
 .wrapp-mid {
     display: flex;
     align-items: center;
-    gap: 2rem;
-
-
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0;
     @include bp-medium{
         flex-wrap: wrap;
     }
     
     .main-chart {
-        flex: 2;
         border-radius: 6px;
         border: 1px solid rgba(245, 245, 245, 0.364);
         background: $main-color;
         height: 340px;
+        position: relative;
+        width: 50%;
         @include centerElement();
         @include bp-medium{
             flex-basis: 100%;
@@ -55,12 +51,12 @@
         
     }
 
-    .main-pie {
-        flex: 1;
+    .main-lineBar {
         border-radius: 6px;
         border: 1px solid rgba(245, 245, 245, 0.364);
         background-color: $main-color;
         height: 340px;
+        width: 50%;
         @include centerElement();
         @include bp-medium{
             flex: 1;

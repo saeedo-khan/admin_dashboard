@@ -62,7 +62,7 @@ const LineBarArea: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <ComposedChart
-        width={500}
+        width={400}
         height={400}
         data={data}
         margin={{

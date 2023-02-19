@@ -142,7 +142,9 @@ export default function Navbar() {
           </Search>
         </div>
         <div className="user-refrence">
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, color: "whitesmoke" }}
+          >
             <IconButton
               size="large"
               aria-label="show 4 new mails"

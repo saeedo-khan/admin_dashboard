@@ -12,7 +12,7 @@ import { chartData } from "../../utils/chartData";
 import "./Chart.scss";
 const Chart: React.FC = () => {
   return (
-    <ResponsiveContainer width="100%" height="90%">
+    <ResponsiveContainer width="90%" height="90%">
       <AreaChart
         width={500}
         height={400}

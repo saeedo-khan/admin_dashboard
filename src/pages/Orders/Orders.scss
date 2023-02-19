@@ -1,33 +1,49 @@
 @import "../../sassStyles/variables";
 @import "../../sassStyles/mixins";
+
 .Orders {
-    background-color: $main-color;
+    background-color: $third-color;
     height: 100%;
 }
-.container-datatable{
+
+.container-datatable {
     max-width: 1300px;
     margin: 0 auto;
     width: 90%;
+    display: flex;
+    flex-direction: column;
 }
 
 
-.header{
+.header-orders {
     width: 100%;
-    background-color: $main-color;
-    height: 5vh;    
-    .order-btn{
+    background-color: $fourth-color;
+    overflow: hidden;
+    margin-top: 1rem;
+    display: flex;
+    .wrap-sort{
+    }
+    .sort-btn {
         @include btn($third-color, $main-color, #454a4d);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        &:first-of-type{
-            background: $fifth-color;
+        span{
+            display: inline-flex;
         }
+    }
+    .active{
+        background: $fifth-color;
+    }
+
+    .create-order {
+        @extend .sort-btn;
+        background: $fifth-color;
+        margin-left: auto;
     }
 }
 
-.datatable-wrapp{
+.datatable-wrapp {
     height: 800px;
     margin-top: 2rem;
 }
-

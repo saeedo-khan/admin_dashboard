@@ -2,12 +2,10 @@ import React from "react";
 import Sidebar from "../../components/layout/Sidebar/Sidebar";
 import Chart from "../../components/chart/Chart";
 import "./Home.scss";
-import PieChart from "../../components/PieChart/PieChart";
 import Box from "../../components/Box/Box";
 
 import MiniProduct from "../../components/MiniProduct/MiniProduct";
 import { boxesData, topProducts } from "../../utils/productsData";
-import MiniOrder from "../../components/MiniOrder/MiniOrder";
 import Datatable from "../../components/Datatable/Datatable";
 import LineBarArea from "../../components/LineBarArea/LineBarArea";
 
@@ -25,14 +23,12 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-        <div>
-          <h2 style={{ color: "#364153" }}>Dashboard</h2>
-        </div>
+        <h2 style={{ color: "whitesmoke" }}>Sales stats</h2>
         <div className="wrapp-mid">
           <div className="main-chart">
             <Chart />
           </div>
-          <div className="main-pie">
+          <div className="main-lineBar">
             <LineBarArea />
           </div>
         </div>

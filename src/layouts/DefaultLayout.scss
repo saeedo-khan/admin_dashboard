@@ -23,8 +23,8 @@ header{
 
 main{
     flex: 9;
-    @include bp-small{
-        flex-basis: 90%;
+    @include bp-medium{
+        flex-basis: 85%;
     }
 }
 

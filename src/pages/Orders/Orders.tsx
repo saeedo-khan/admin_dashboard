@@ -4,11 +4,9 @@ import { initOrdersRow } from "../../utils/tableRows";
 import "./Orders.scss";
 // icons
 import AddIcon from "@mui/icons-material/Add";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { GridCellParams, GridColDef } from "@mui/x-data-grid";
-import { Chip } from "@mui/material";
+import { Chip, Menu, MenuItem } from "@mui/material";
 const Orders: React.FC = () => {
   const [ordersRow, setOrdersRow] = useState(initOrdersRow);
 
@@ -59,22 +57,22 @@ const Orders: React.FC = () => {
   return (
     <div className="Orders">
       <div className="container-datatable">
-        <div className="header">
-          <button className="order-btn">
+        <div className="header-orders">
+          <button className="sort-btn active">
+            <span>All</span>
+          </button>
+          <button className="sort-btn">
+            <span>Pending</span>
+          </button>
+          <button className="sort-btn">
+            <span>Approved</span>
+          </button>
+          <button className="sort-btn">
+            <span>Failed</span>
+          </button>
+          <button className="create-order">
             <AddIcon />
-            <span>New campaign</span>
-          </button>
-          <button className="order-btn">
-            <CreateOutlinedIcon />
-            <span>Edit</span>
-          </button>
-          <button className="order-btn">
-            <ContentCopyOutlinedIcon />
-            <span>Duplicate</span>
-          </button>
-          <button className="order-btn">
-            <DeleteOutlinedIcon />
-            <span>Remove</span>
+            <span>New Order</span>
           </button>
         </div>
         <div className="datatable-wrapp">
