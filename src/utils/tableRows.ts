@@ -7,6 +7,12 @@ const objVal = [
   { name: "Failed", color: "error", variant: "filled" },
 ];
 
+const status = [
+  { name: "Active", color: "success"},
+  { name: "Inactive", color: "error"}
+]
+
+
 export const initOrdersRow: GridRowsProp = [
   {
     id: 1,
@@ -148,18 +154,117 @@ export const initCustomers: GridRowsProp = [
     last_ordered: "25/2/2023",
     email: 'jibonze@gmail.com',
     phone: '01642 39541',
-    status: 'Active',
+    status: status[0],
   },
   {
     id: 2,
     customer_image:
       "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     customer_name: "Dianne Russel",
-    spent: "6.745",
+    spent: "1782",
+    last_ordered: "27/2/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[1],
+  },
+  {
+    id: 3,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "2431",
+    last_ordered: "29/12/2022",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[0],
+  },
+  {
+    id: 4,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "1332",
+    last_ordered: "13/2/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[0],
+  },
+  {
+    id: 5,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "2381",
+    last_ordered: "28/12/2022",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[1],
+  },
+  {
+    id: 6,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "5083",
+    last_ordered: "10/2/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[0],
+  },
+  {
+    id: 7,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "1578",
+    last_ordered: "13/2/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[1],
+  },
+  {
+    id: 8,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "1077",
+    last_ordered: "11/1/2023",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[0],
+  },
+  {
+    id: 9,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "3685",
+    last_ordered: "8/12/2022",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[1],
+  },
+  {
+    id: 10,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "1754",
+    last_ordered: "6/12/2022",
+    email: 'nimka2@gmail.com',
+    phone: '04851 39541',
+    status: status[0],
+  },
+  {
+    id: 11,
+    customer_image:
+      "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    customer_name: "Dianne Russel",
+    spent: "3421",
     last_ordered: "1/2/2023",
     email: 'nimka2@gmail.com',
     phone: '04851 39541',
-    status: 'Inactive',
-  },
+    status: status[1],
+  }
   
 ];

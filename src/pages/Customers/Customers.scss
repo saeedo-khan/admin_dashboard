@@ -1,24 +1,47 @@
 @import "../../sassStyles/variables";
 @import "../../sassStyles/mixins";
-.users{
-    background-color: $main-color;
+.customers{
+    background-color: $third-color;
     height: 100%;
 
-    .users-container{
-        max-width: 1500px;
+    .customers-container{
+        max-width: 1300px;
         margin: 0 auto;
-        width: 80%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
     }
 }
 
-.add-user-btn{
-    @include btn($fifth-color, $main-color, #5063c3);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.header-customers{
+    width: 100%;
+    background-color: $main-color;
+    overflow: hidden;
+    margin-top: 1rem;
+    display: flex;
+    .sort-btn {
+        @include btn($third-color, $main-color, #454a4d);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            display: inline-flex;
+        }
+    }
+    .active{
+        background: $fifth-color;
+    }
+
+    .new-customer {
+        @extend .sort-btn;
+        background: $fifth-color;
+        margin-left: auto;
+    }
 }
 
+
+
 .wrap-datatable{
-    height: 800px;
+    height: 700px;
     margin-top: 2rem;
 }

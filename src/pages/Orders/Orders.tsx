@@ -1,14 +1,30 @@
 import React, { useState } from "react";
-import Datatable from "../../components/Datatable/Datatable";
 import { initOrdersRow } from "../../utils/tableRows";
 import "./Orders.scss";
 // icons
 import AddIcon from "@mui/icons-material/Add";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { GridCellParams, GridColDef } from "@mui/x-data-grid";
-import { Chip, Menu, MenuItem } from "@mui/material";
+import {
+  DataGrid,
+  GridCellParams,
+  GridColDef,
+  GridSelectionModel,
+} from "@mui/x-data-grid";
+import { Chip, IconButton, Menu, MenuItem } from "@mui/material";
 const Orders: React.FC = () => {
   const [ordersRow, setOrdersRow] = useState(initOrdersRow);
+  const [selectionModel, setSelectionModel] =
+    React.useState<GridSelectionModel>([]);
+
+  // menu action
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const orderCols: GridColDef[] = [
     {
@@ -54,6 +70,42 @@ const Orders: React.FC = () => {
     },
   ];
 
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 150,
+      renderCell: (params: GridCellParams) => {
+        return (
+          <>
+            <IconButton
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              sx={{ color: "white" }}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Edit</MenuItem>
+              <MenuItem onClick={handleClose}>Remove</MenuItem>
+            </Menu>
+          </>
+        );
+      },
+    },
+  ];
+
   return (
     <div className="Orders">
       <div className="container-datatable">
@@ -76,7 +128,27 @@ const Orders: React.FC = () => {
           </button>
         </div>
         <div className="datatable-wrapp">
-          <Datatable rowsPerPage={10} rows={ordersRow} columns={orderCols} />
+          <DataGrid
+            sx={{
+              boxShadow: 2,
+              bgcolor: "#111315",
+              color: "whitesmoke",
+              border: 1,
+              borderColor: "transparent",
+              "& .css-rtrcn9-MuiTablePagination-root": {
+                color: "whitesmoke",
+              },
+            }}
+            rows={ordersRow}
+            columns={orderCols.concat(actionColumn)}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
+            onSelectionModelChange={(newSelectionModel) => {
+              setSelectionModel(newSelectionModel);
+            }}
+            selectionModel={selectionModel}
+            checkboxSelection
+          />
         </div>
       </div>
     </div>

@@ -1,23 +1,51 @@
-import { GridColDef } from "@mui/x-data-grid";
-import React, { useState } from "react";
-import Datatable from "../../components/Datatable/Datatable";
+import {
+  DataGrid,
+  GridCellParams,
+  GridColDef,
+  GridSelectionModel,
+} from "@mui/x-data-grid";
+import React, { useEffect, useState } from "react";
 import { initCustomers } from "../../utils/tableRows";
 import AddIcon from "@mui/icons-material/Add";
 import "./Customers.scss";
-import { useQuery } from "react-query";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { IconButton, Menu, MenuItem, Chip } from "@mui/material";
+
 const Customers: React.FC = () => {
   const [customersRow, setCustomersRow] = useState(initCustomers);
+  const [selectionModel, setSelectionModel] =
+    React.useState<GridSelectionModel>([]);
 
-  const fetchUsersList = async () => {
-    const res = await fetch(
-      "https://dummyjson.com/users?limit=10&skip=10&select=firstName,lastName,birthDate,phone,image"
-    );
-    const data = await res.json();
-    return data.users;
+  // menu action
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
   };
-  const { status, data, error } = useQuery("users", fetchUsersList);
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-  // id user email status transaction
+  function sortActiveValues() {
+    const activeVal = initCustomers.filter(
+      (item) => item.status.name === "Active"
+    );
+    setCustomersRow(activeVal);
+  }
+  function sortInactiveValues() {
+    const inactiveVal = initCustomers.filter(
+      (item) => item.status.name === "Inactive"
+    );
+    setCustomersRow(inactiveVal);
+  }
+
+  function deleteRow() {
+    setCustomersRow(
+      customersRow.filter((item) => item.id !== selectionModel[0])
+    );
+    handleClose();
+  }
+
   const cols: GridColDef[] = [
     {
       field: "customer_name",
@@ -49,20 +77,104 @@ const Customers: React.FC = () => {
     { field: "last_ordered", headerName: "Last Ordered", width: 150 },
     { field: "email", headerName: "Email", width: 200 },
     { field: "phone", headerName: "Phone", width: 150 },
-    { field: "status", headerName: "Status", width: 150 },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 150,
+      renderCell: (params) => {
+        return (
+          <Chip
+            label={params.value.name}
+            color={params.value.color}
+            size="small"
+          />
+        );
+      },
+    },
+  ];
+
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 150,
+      renderCell: (params: GridCellParams) => {
+        return (
+          <>
+            <IconButton
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              sx={{ color: "white" }}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Edit</MenuItem>
+              <MenuItem onClick={deleteRow}>Remove</MenuItem>
+            </Menu>
+          </>
+        );
+      },
+    },
   ];
 
   return (
-    <div className="users">
-      <div className="users-container">
-        <div className="header-users">
-          <button className="add-user-btn">
+    <div className="customers">
+      <div className="customers-container">
+        <div className="header-customers">
+          <button
+            className="sort-btn active"
+            onClick={() => setCustomersRow(initCustomers)}
+          >
+            <span>All</span>
+          </button>
+          <button className="sort-btn" onClick={sortInactiveValues}>
+            <span>Inactive</span>
+          </button>
+          <button className="sort-btn" onClick={sortActiveValues}>
+            <span>Active</span>
+          </button>
+          <button className="sort-btn" onClick={deleteRow}>
+            <span>Delete</span>
+          </button>
+          <button className="new-customer">
             <AddIcon />
-            <span>New user</span>
+            <span>New Order</span>
           </button>
         </div>
         <div className="wrap-datatable">
-          <Datatable rowsPerPage={7} rows={customersRow} columns={cols} />
+          <DataGrid
+            sx={{
+              boxShadow: 2,
+              bgcolor: "#111315",
+              color: "whitesmoke",
+              border: 1,
+              borderColor: "transparent",
+              "& .css-rtrcn9-MuiTablePagination-root": {
+                color: "whitesmoke",
+              },
+            }}
+            rows={customersRow}
+            columns={cols.concat(actionColumn)}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
+            onSelectionModelChange={(newSelectionModel) => {
+              setSelectionModel(newSelectionModel);
+            }}
+            selectionModel={selectionModel}
+            checkboxSelection
+          />
         </div>
       </div>
     </div>

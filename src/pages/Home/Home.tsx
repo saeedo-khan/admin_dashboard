@@ -1,12 +1,10 @@
 import React from "react";
-import Sidebar from "../../components/layout/Sidebar/Sidebar";
 import Chart from "../../components/chart/Chart";
 import "./Home.scss";
 import Box from "../../components/Box/Box";
 
 import MiniProduct from "../../components/MiniProduct/MiniProduct";
 import { boxesData, topProducts } from "../../utils/productsData";
-import Datatable from "../../components/Datatable/Datatable";
 import LineBarArea from "../../components/LineBarArea/LineBarArea";
 
 const Home: React.FC = () => {

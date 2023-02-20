@@ -17,12 +17,10 @@
 
 .header-orders {
     width: 100%;
-    background-color: $fourth-color;
+    background-color: $main-color;
     overflow: hidden;
     margin-top: 1rem;
     display: flex;
-    .wrap-sort{
-    }
     .sort-btn {
         @include btn($third-color, $main-color, #454a4d);
         display: inline-flex;
@@ -44,6 +42,6 @@
 }
 
 .datatable-wrapp {
-    height: 800px;
+    height: 700px;
     margin-top: 2rem;
 }
