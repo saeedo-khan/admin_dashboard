@@ -87,7 +87,9 @@ const Products: React.FC = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose}>Edit</MenuItem>
+              <MenuItem>
+                <Link to={`/products/${params.row.id}`}>Edit</Link>
+              </MenuItem>
               <MenuItem onClick={handleClose}>Remove</MenuItem>
             </Menu>
           </>
