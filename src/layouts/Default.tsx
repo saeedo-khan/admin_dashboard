@@ -8,7 +8,6 @@ interface DefaultLayoutProps {
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
-  const { width, height } = useWindowDimensions();
   return (
     <div className="default-main">
       <header>

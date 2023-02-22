@@ -8,6 +8,12 @@
     }
 }
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
 .layout-main{
     display: flex;
 }

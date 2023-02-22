@@ -64,6 +64,14 @@
 .MuiTablePagination-displayedRows .css-levciy-MuiTablePagination-displayedRows{
     color: whitesmoke !important;
 }
+
+.action-col-product{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .text-link{
     color: inherit;
     text-decoration: inherit;

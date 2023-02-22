@@ -27,6 +27,10 @@ const Products: React.FC = () => {
     setAnchorEl(null);
   };
 
+  const handleDelete = () => {
+    console.info("You clicked the delete icon.");
+  };
+
   const cols: GridColDef[] = [
     {
       field: "product_name",
@@ -67,32 +71,23 @@ const Products: React.FC = () => {
       width: 150,
       renderCell: (params: GridCellParams) => {
         return (
-          <>
-            <IconButton
-              id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-              sx={{ color: "white" }}
-            >
-              <MoreVertIcon />
-            </IconButton>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
-              <MenuItem>
-                <Link to={`/products/${params.row.id}`}>Edit</Link>
-              </MenuItem>
-              <MenuItem onClick={handleClose}>Remove</MenuItem>
-            </Menu>
-          </>
+          <div className="action-col-product">
+            <Link to={`/products/${params.row.id}`} className="text-link">
+              <Chip
+                label="Edit"
+                variant="outlined"
+                sx={{ color: "whitesmoke", cursor: "pointer" }}
+                size="small"
+              />
+            </Link>
+
+            <Chip
+              label="Delet"
+              onDelete={handleDelete}
+              color="error"
+              size="small"
+            />
+          </div>
         );
       },
     },

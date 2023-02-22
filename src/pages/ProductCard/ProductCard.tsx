@@ -1,16 +1,19 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { initProductsRow } from "../../utils/tableRows";
 import "./ProductCard.scss";
-interface ProductCardProps {}
 
-const ProductCard: React.FC<ProductCardProps> = ({}) => {
+const ProductCard: React.FC = () => {
+  const { id } = useParams();
+
   return (
     <div className="ProductCards">
-      <div className="container">
+      <div className="container-product-card">
         <div className="wrap-top-section">
           <div className="left-card">
             <div className="preview-img">
               <img
-                src="https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                // src={initProductsRow[id].product_image}
                 alt="product image"
               />
             </div>

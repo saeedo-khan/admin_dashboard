@@ -2,17 +2,17 @@
 @import "../../../sassStyles/mixins";
 .Navbar{
     background-color: $main-color;
-    display: flex;
     height: 50px;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 999;
-    .container {
+    display: flex;
+    .nav-container {
+        width: 90%;
+        margin-inline: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
-        margin: 0 auto;
     }
 }

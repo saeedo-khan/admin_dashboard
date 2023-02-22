@@ -8,8 +8,30 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { chartData } from "../../utils/chartData";
 import "./Chart.scss";
+const chartData = [
+  {
+    name: "January",
+    sales: 4000,
+  },
+  {
+    name: "February",
+    sales: 3000,
+  },
+  {
+    name: "March",
+    sales: 2000,
+  },
+  {
+    name: "April",
+    sales: 2780,
+  },
+  {
+    name: "May",
+    sales: 1890,
+  },
+];
+
 const Chart: React.FC = () => {
   return (
     <ResponsiveContainer width="90%" height="90%">
@@ -28,7 +50,7 @@ const Chart: React.FC = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+        <Area type="monotone" dataKey="sales" stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
     </ResponsiveContainer>
   );
